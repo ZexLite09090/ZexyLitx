@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zexy Lite Launcher</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(145deg, #0a0a0a, #001d3d);
+      color: white;
+      overflow: hidden;
+    }
+
+    .loading-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background: linear-gradient(145deg, #000000, #001d3d);
+    }
+
+    .dots {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: white;
+      animation: smoothBounce 1.5s infinite ease-in-out;
+    }
+
+    .dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes smoothBounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .main-content {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    h1 {
+      color: #00bfff;
+      margin-bottom: 30px;
+      font-size: 24px;
+      text-align: center;
+      text-shadow: 0 0 10px #00bfff;
+    }
+
+    .link-button {
+      background-color: #111;
+      color: #00bfff;
+      border: 2px solid #00bfff;
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin: 12px 0;
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+      font-size: 18px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 8px #00bfff33;
+    }
+
+    .link-button:hover {
+      background-color: #00bfff;
+      color: #000;
+      box-shadow: 0 0 15px #00bfff;
+      transform: scale(1.03);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+    }
+
+    .welcome-text {
+      font-size: 22px;
+      color: #00bfff;
+      margin-bottom: 30px;
+      text-align: center;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div style="color:#00bfff; font-size: 16px;">Loading...</div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content" id="mainContent">
+    <div class="welcome-text">Welcome to the Zexy Lite</div>
+
+    <h1>Zexy Team Best Script<br><small>(No Iklan)</small></h1>
+
+    <a href="https://delta-executor.com/download/" class="link-button" target="_blank">🔹 Delta Executor</a>
+    <a href="https://arceusx.com/" class="link-button" target="_blank">🔹 Arceus X</a>
+    <a href="https://codex.lol/" class="link-button" target="_blank">🔹 Codex Executor</a>
+    <a href="https://krnlexecutor.com/" class="link-button" target="_blank">🔹 KRNL Executor</a>
+
+    <footer>© 2025 Zexy Team — Semua link langsung, tanpa iklan.</footer>
+  </div>
+
+  <script>
+    // Tampilkan loading selama 15 detik, lalu ganti ke konten utama
+    setTimeout(() => {
+      document.getElementById("loadingScreen").style.display = "none";
+      const mainContent = document.getElementById("mainContent");
+      mainContent.style.display = "flex";
+    }, 15000);
+  </script>
+
+</body>
+</html>
